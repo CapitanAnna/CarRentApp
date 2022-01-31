@@ -19,6 +19,13 @@ namespace CarRentApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+            MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
+        }
+
+
+        private void tbPassword_MouseLeave(object sender, EventArgs e)
+        {
             if (string.IsNullOrEmpty(tbUsername.Text))
             {
                 MessageBox.Show("Please fill username");
@@ -29,7 +36,8 @@ namespace CarRentApp1
                 MessageBox.Show("Please fill password");
                 tbPassword.Select();
             }
-            //MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
+            btnLogin.Enabled = true;
+            btnLogin.Select();
         }
     }
 }
