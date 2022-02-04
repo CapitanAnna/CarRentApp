@@ -21,6 +21,7 @@ namespace CarRentApp1
         {
 
             // MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
+             MessageBox.Show(Utils.HashPassword(tbUsername.Text) + " " + tbUsername.Text);
             var mainWindow = new MainWindow();
             mainWindow.Show();
             this.Hide();
