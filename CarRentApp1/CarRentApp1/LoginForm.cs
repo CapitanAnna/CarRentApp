@@ -19,8 +19,11 @@ namespace CarRentApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
+
+            // MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
         }
 
 
