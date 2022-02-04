@@ -32,7 +32,7 @@ namespace CarRentApp1
                 }
                 else
                 {
-                    var mainWindow = new MainWindow();
+                    var mainWindow = new MainWindow(this, user);
                     mainWindow.Show();
                     this.Hide();
                 }
