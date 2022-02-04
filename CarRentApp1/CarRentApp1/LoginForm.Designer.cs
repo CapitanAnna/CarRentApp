@@ -35,6 +35,8 @@ namespace CarRentApp1
             this.lPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +65,13 @@ namespace CarRentApp1
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(269, 34);
             this.tbUsername.TabIndex = 2;
+            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
+            this.tbUsername.Validating += new System.ComponentModel.CancelEventHandler(this.tbUsername_Validating);
             // 
             // lPassword
             // 
             this.lPassword.AutoSize = true;
-            this.lPassword.Location = new System.Drawing.Point(499, 127);
+            this.lPassword.Location = new System.Drawing.Point(499, 175);
             this.lPassword.Name = "lPassword";
             this.lPassword.Size = new System.Drawing.Size(120, 29);
             this.lPassword.TabIndex = 3;
@@ -75,8 +79,9 @@ namespace CarRentApp1
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(438, 177);
+            this.tbPassword.Location = new System.Drawing.Point(438, 225);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(269, 34);
             this.tbPassword.TabIndex = 4;
             this.tbPassword.MouseLeave += new System.EventHandler(this.tbPassword_MouseLeave);
@@ -85,7 +90,7 @@ namespace CarRentApp1
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLogin.Enabled = false;
-            this.btnLogin.Location = new System.Drawing.Point(504, 250);
+            this.btnLogin.Location = new System.Drawing.Point(504, 298);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(127, 50);
             this.btnLogin.TabIndex = 5;
@@ -93,11 +98,21 @@ namespace CarRentApp1
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(522, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 29);
+            this.label1.TabIndex = 6;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 421);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.lPassword);
@@ -122,6 +137,8 @@ namespace CarRentApp1
         private System.Windows.Forms.Label lPassword;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
