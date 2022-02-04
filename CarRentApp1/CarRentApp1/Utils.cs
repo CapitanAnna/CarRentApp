@@ -31,5 +31,11 @@ namespace CarRentApp1
             }
             return stringBuilder.ToString();
         }
+        public static string DefaultHashPassword()
+        {
+            var defaulHash = HashPassword("password@123");
+            return defaulHash;
+        }
+
     }
 }

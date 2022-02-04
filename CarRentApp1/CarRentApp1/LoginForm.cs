@@ -19,12 +19,29 @@ namespace CarRentApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            // MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
-             MessageBox.Show(Utils.HashPassword(tbUsername.Text) + " " + tbUsername.Text);
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Hide();
+            try
+            {
+                var name= tbUsername.Text;
+                var password = tbPassword.Text;
+                var hashPassword = Utils.HashPassword(password);
+                //check for matching user name, password and active flag
+                var user = "Anna";
+                if (user==null)
+                {
+                    MessageBox.Show("Please provide valid credentials");
+                }
+                else
+                {
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Hide();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! please try again, in 5 min");
+            }
+            
         }
 
 
