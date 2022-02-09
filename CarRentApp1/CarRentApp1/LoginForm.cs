@@ -19,13 +19,16 @@ namespace CarRentApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            var dbContext = new CarRentDbContext();
             try
             {
                 var name= tbUsername.Text;
                 var password = tbPassword.Text;
                 var hashPassword = Utils.HashPassword(password);
                 //check for matching user name, password and active flag
-                var user = "Anna";
+                var userName = tbUsername.Text.Trim();
+                var user = dbContext.Users.FirstOrDefault
+                    (x => x.UserName == userName && x.Password == hashPassword && x.IsActive == true);
                 if (user==null)
                 {
                     MessageBox.Show("Please provide valid credentials");
@@ -44,6 +47,7 @@ namespace CarRentApp1
             
         }
 
+        
 
         private void tbPassword_MouseLeave(object sender, EventArgs e)
         {

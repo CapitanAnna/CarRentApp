@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRentApp1.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,13 @@ namespace CarRentApp1
     {
         private LoginForm _login;
         public string roleName;
-        public string user; // !public User user;
+        public User user; // !public User user;
 
         public MainWindow()
         {
             InitializeComponent();
         }
-        public MainWindow(LoginForm login, string user)
+        public MainWindow(LoginForm login, User user)
         {
             InitializeComponent();
             _login = login;

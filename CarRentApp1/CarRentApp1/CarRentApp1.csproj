@@ -80,6 +80,19 @@
     <Compile Include="ManageUsers.Designer.cs">
       <DependentUpon>ManageUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202091021400_FirstMigaion.cs" />
+    <Compile Include="Migrations\202202091021400_FirstMigaion.designer.cs">
+      <DependentUpon>202202091021400_FirstMigaion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202091049569_AddCars.cs" />
+    <Compile Include="Migrations\202202091049569_AddCars.designer.cs">
+      <DependentUpon>202202091049569_AddCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202091215024_AddAdmin.cs" />
+    <Compile Include="Migrations\202202091215024_AddAdmin.designer.cs">
+      <DependentUpon>202202091215024_AddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
@@ -91,6 +104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202091021400_FirstMigaion.resx">
+      <DependentUpon>202202091021400_FirstMigaion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202091049569_AddCars.resx">
+      <DependentUpon>202202091049569_AddCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202091215024_AddAdmin.resx">
+      <DependentUpon>202202091215024_AddAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
