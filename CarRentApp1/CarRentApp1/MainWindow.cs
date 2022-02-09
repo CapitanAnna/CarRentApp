@@ -27,7 +27,8 @@ namespace CarRentApp1
             _login = login;
             this.user = user;
             roleName = "Admin";//get role from user
-            MessageBox.Show(this.user + " " + roleName);
+            //так мы показываем hash пароль
+           // MessageBox.Show(this.user + " " + roleName);
         }
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
