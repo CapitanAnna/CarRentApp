@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRentApp1.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -11,7 +12,12 @@ namespace CarRentApp1
     {
         public CarRentDbContext() : base("MyConnectionString")
         {
-
+            
         }
+        public virtual DbSet<CarRentalRecord> CarRentalRecords { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<TypesOfCar> TypesOfCars { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
     }
 }
