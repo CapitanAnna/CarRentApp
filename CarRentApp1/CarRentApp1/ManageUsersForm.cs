@@ -23,12 +23,12 @@ namespace CarRentApp1
         {
             try
             {
-                var id = (int)dgvUserList.SelectedRows[0].Cells["id"].Value;
+                var id = (int)dgvUserList.SelectedRows[0].Cells["Id"].Value;
                 //query db for record
-                //var user = dbContext.Users.FirstOrDefault(x => x.id == id); 
+                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id); 
                 var hashPassword = Utils.DefaultHashPassword();
-                //user.password=hashPassword
-                //dbContext.SaveChanges();
+                user.Password = hashPassword;
+                _dbContext.SaveChanges();
                 MessageBox.Show("Password has been resert");
             }
             catch (Exception)
@@ -61,6 +61,11 @@ namespace CarRentApp1
         private void ManageUsersForm_Load(object sender, EventArgs e)
         {
             PopulateGrid();
+        }
+
+        private void btnActivateDeactivateUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
