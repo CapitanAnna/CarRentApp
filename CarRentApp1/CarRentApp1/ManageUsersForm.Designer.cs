@@ -46,6 +46,7 @@ namespace CarRentApp1
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAddNewUser
             // 
@@ -88,7 +89,7 @@ namespace CarRentApp1
             this.dgvUserList.Size = new System.Drawing.Size(955, 314);
             this.dgvUserList.TabIndex = 4;
             // 
-            // ManageUsers
+            // ManageUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,8 +99,9 @@ namespace CarRentApp1
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.btnRefresh);
-            this.Name = "ManageUsers";
+            this.Name = "ManageUsersForm";
             this.Text = "ManageUsers";
+            this.Load += new System.EventHandler(this.ManageUsersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
             this.ResumeLayout(false);
 

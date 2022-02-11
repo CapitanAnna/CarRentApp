@@ -12,6 +12,8 @@ namespace CarRentApp1
 {
     public partial class ManageUsersForm : Form
     {
+        private CarRentDbContext _dbContext = new CarRentDbContext();
+        private int _id;
         public ManageUsersForm()
         {
             InitializeComponent();
@@ -33,6 +35,32 @@ namespace CarRentApp1
             {
                 MessageBox.Show("Try again");
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            PopulateGrid();
+        }
+
+        public void PopulateGrid()
+        {
+            var users = _dbContext.Users.Select(x => new
+            {
+                x.Id,
+                x.UserName,
+                //RoleName=x.UserRoles.FirstOrDefault().Role.Name,
+                x.UserRoles.FirstOrDefault().Role.Name,
+                x.IsActive
+            }).ToList();
+            dgvUserList.DataSource = users;
+            dgvUserList.Columns["Id"].Visible = false;
+            dgvUserList.Columns["IsActive"].HeaderText = "Active";
+            dgvUserList.Columns["Name"].HeaderText = "Role Name";
+        }
+
+        private void ManageUsersForm_Load(object sender, EventArgs e)
+        {
+            PopulateGrid();
         }
     }
 }
