@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace CarRentApp1
 {
-    public partial class MainWindow : Form
+    public partial class MainWindowForm : Form
     {
         private LoginForm _login;
         public string roleName;
         public User user; // !public User user;
 
-        public MainWindow()
+        public MainWindowForm()
         {
             InitializeComponent();
         }
-        public MainWindow(LoginForm login, User user)
+        public MainWindowForm(LoginForm login, User user)
         {
             InitializeComponent();
             _login = login;
@@ -34,7 +34,7 @@ namespace CarRentApp1
         {
             if (!Utils.FormIsOpen("ManageUsers"))
             {
-                var manageUsers = new ManageUsers();
+                var manageUsers = new ManageUsersForm();
                // manageUsers.MdiParent = this;
                 manageUsers.Show();
             }

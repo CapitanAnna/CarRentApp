@@ -1,7 +1,7 @@
 ﻿
 namespace CarRentApp1
 {
-    partial class ManageUsers
+    partial class ManageUsersForm
     {
         /// <summary>
         /// Required designer variable.

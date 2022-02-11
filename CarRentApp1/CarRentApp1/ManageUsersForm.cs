@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CarRentApp1
 {
-    public partial class ManageUsers : Form
+    public partial class ManageUsersForm : Form
     {
-        public ManageUsers()
+        public ManageUsersForm()
         {
             InitializeComponent();
         }
