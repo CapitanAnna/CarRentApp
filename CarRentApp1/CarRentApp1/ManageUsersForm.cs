@@ -29,7 +29,7 @@ namespace CarRentApp1
                 var hashPassword = Utils.DefaultHashPassword();
                 user.Password = hashPassword;
                 _dbContext.SaveChanges();
-                MessageBox.Show("Password has been resert");
+                MessageBox.Show("Password has been reset");
             }
             catch (Exception)
             {
@@ -65,7 +65,33 @@ namespace CarRentApp1
 
         private void btnActivateDeactivateUser_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var id = (int)dgvUserList.SelectedRows[0].Cells["Id"].Value;
+                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+                if (user!=null)
+                {
+                    user.IsActive = !user.IsActive;
+                    _dbContext.SaveChanges();
+                    MessageBox.Show("User status has been updated");
+                    PopulateGrid();
+                }
+                else
+                {
+                    MessageBox.Show("User is not found");
+                }
+            }
+            catch (Exception)
+            {
 
+                MessageBox.Show("Cannot update user status");
+            }
+        }
+
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+            var addNewUser = new AddNewUserForm(this);
+            addNewUser.Show();
         }
     }
 }
