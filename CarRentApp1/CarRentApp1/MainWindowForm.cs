@@ -16,6 +16,7 @@ namespace CarRentApp1
         private LoginForm _login;
         public string roleName;
         public User user; // !public User user;
+        private CarRentDbContext _dbContext=new CarRentDbContext();
 
         public MainWindowForm()
         {
@@ -40,5 +41,42 @@ namespace CarRentApp1
             }
         }
 
+        private void addRentalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.FormIsOpen("AddEditRentalForm"))
+            {
+                var addRentalForm = new AddEditRentalForm();
+                //addRentalForm.Text = "Add Rental Form";
+                addRentalForm.Show();
+            }
+        }
+
+        private void editRentalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.FormIsOpen("AddEditRentalForm"))
+            {
+                CarRentalRecord carRentalRecord=new CarRentalRecord();
+                var addRentalForm = new AddEditRentalForm(carRentalRecord);
+                addRentalForm.Show();
+                
+            }
+        }
+
+        private void MainWindowForm_Load(object sender, EventArgs e)
+        {
+            ////Load CarRecordsGrid
+            var carRecords = _dbContext.CarRentalRecords
+                .Select(x => new { 
+                 x.CustomerName,
+                 x.Cost,
+                 x.DateRented,
+                 x.DateReturned,
+                 x.Id,
+                 Car=x.TypesOfCars.Make
+                }).ToList();
+
+            dgvCarRentalRecords.DataSource = carRecords;
+            dgvCarRentalRecords.Columns["Id"].Visible = false;//hide column
+        }
     }
 }

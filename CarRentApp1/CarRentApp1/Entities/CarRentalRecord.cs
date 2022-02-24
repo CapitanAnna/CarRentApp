@@ -11,6 +11,6 @@ namespace CarRentApp1.Entities
         public decimal Cost { get; set; }
         public int? TypesOfCarId { get; set; }
         public virtual TypesOfCar TypesOfCars { get; set; }
-        
+        public object CarRentalRecords { get; internal set; }
     }
 }

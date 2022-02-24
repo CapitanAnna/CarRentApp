@@ -33,7 +33,7 @@ namespace CarRentApp1
         }
         public static string DefaultHashPassword()
         {
-            var defaulHash = HashPassword("password@123");
+            var defaulHash = HashPassword("password@123");//password@123
             return defaulHash;
         }
 

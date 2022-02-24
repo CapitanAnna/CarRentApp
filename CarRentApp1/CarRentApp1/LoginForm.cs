@@ -15,7 +15,7 @@ namespace CarRentApp1
         public LoginForm()
         {
             InitializeComponent();
-            tbUsername.Text = Utils.HashPassword("1");
+            //tbUsername.Text = Utils.HashPassword("1");//так мы видим hash пароля
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
