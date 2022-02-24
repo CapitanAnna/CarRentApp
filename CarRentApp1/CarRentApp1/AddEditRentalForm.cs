@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -25,7 +26,11 @@ namespace CarRentApp1
             btnSave.Text = "Update";
             //cahange form name
             this.Text = "EditRentalForm";
-            
+            tbCustomerName.Text = _carRentalRecord.CustomerName;
+            tbCost.Text = _carRentalRecord.Cost.ToString();
+            dtpDateRented.Text = _carRentalRecord.DateRented.Value.ToString();
+            dtpDateReturned.Text = _carRentalRecord.DateReturned.Value.ToString();
+            cbTypesOfCars.SelectedValue= _carRentalRecord.TypesOfCars.ToString();
         }
         public AddEditRentalForm()
         {
@@ -65,9 +70,26 @@ namespace CarRentApp1
                     DateReturned = dateReturned,
                     TypesOfCarId = typeOfCarId
                 };
-                //insert
-                _carRentDbContext.CarRentalRecords.Add(car);
-                _carRentDbContext.SaveChanges();
+
+                if (_carRentalRecord!=null)
+                {
+                    _carRentalRecord.CustomerName = customerName;
+                    _carRentalRecord.Cost = cost;
+                    _carRentalRecord.DateRented = dateRented;
+                    _carRentalRecord.DateReturned = dateReturned;
+                    _carRentalRecord.TypesOfCarId = typeOfCarId;
+
+                    //update
+                    _carRentDbContext.CarRentalRecords.AddOrUpdate(_carRentalRecord);
+                    _carRentDbContext.SaveChanges();
+                }
+                else
+                {
+                    //insert
+                    _carRentDbContext.CarRentalRecords.Add(car);
+                    _carRentDbContext.SaveChanges();
+                }
+                
 
             }
             catch (Exception)

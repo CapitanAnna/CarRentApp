@@ -37,6 +37,7 @@ namespace CarRentApp1
             this.viewArhiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCarRentalRecords = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarRentalRecords)).BeginInit();
             this.SuspendLayout();
@@ -73,21 +74,21 @@ namespace CarRentApp1
             // addRentalToolStripMenuItem
             // 
             this.addRentalToolStripMenuItem.Name = "addRentalToolStripMenuItem";
-            this.addRentalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addRentalToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.addRentalToolStripMenuItem.Text = "Add Rental";
             this.addRentalToolStripMenuItem.Click += new System.EventHandler(this.addRentalToolStripMenuItem_Click);
             // 
             // editRentalToolStripMenuItem
             // 
             this.editRentalToolStripMenuItem.Name = "editRentalToolStripMenuItem";
-            this.editRentalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editRentalToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.editRentalToolStripMenuItem.Text = "Edit Rental";
             this.editRentalToolStripMenuItem.Click += new System.EventHandler(this.editRentalToolStripMenuItem_Click);
             // 
             // viewArhiveToolStripMenuItem
             // 
             this.viewArhiveToolStripMenuItem.Name = "viewArhiveToolStripMenuItem";
-            this.viewArhiveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewArhiveToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.viewArhiveToolStripMenuItem.Text = "View Arhive";
             // 
             // manageUsersToolStripMenuItem
@@ -105,14 +106,26 @@ namespace CarRentApp1
             this.dgvCarRentalRecords.RowHeadersWidth = 51;
             this.dgvCarRentalRecords.RowTemplate.Height = 24;
             this.dgvCarRentalRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarRentalRecords.Size = new System.Drawing.Size(776, 407);
+            this.dgvCarRentalRecords.Size = new System.Drawing.Size(776, 331);
             this.dgvCarRentalRecords.TabIndex = 1;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRefresh.Location = new System.Drawing.Point(325, 377);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(128, 43);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // MainWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvCarRentalRecords);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -137,5 +150,6 @@ namespace CarRentApp1
         private System.Windows.Forms.ToolStripMenuItem viewArhiveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvCarRentalRecords;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
