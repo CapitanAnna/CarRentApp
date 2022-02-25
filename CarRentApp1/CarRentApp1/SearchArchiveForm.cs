@@ -21,11 +21,11 @@ namespace CarRentApp1
 
         private void SearchArchiveForm_Load(object sender, EventArgs e)
         {
-            
-            //List<CarRentalRecord> carRentalRecord = new List<CarRentalRecord>();
+            var dateTimeNow = DateTime.Now.AddDays(-3);
             var carRentalRecord = _dbContext.CarRentalRecords
+                .Where (x => x.DateRented < DateTime.Now)
+                .Where (x => x.DateRented > dateTimeNow)
                 .Select(x => new {
-
                 x.CustomerName,
                 x.Cost,
                 x.DateRented,
@@ -34,7 +34,6 @@ namespace CarRentApp1
                 
                 }).ToList();
             dgvCarRents.DataSource = carRentalRecord;
-
         }
     }
 }

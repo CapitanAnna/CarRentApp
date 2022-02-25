@@ -58,7 +58,7 @@ namespace CarRentApp1
                 {
                     MessageBox.Show("Fill form cost");
                 }
-                if (dateReturned<dateRented)
+                if (dateReturned<=dateRented)
                 {
                     MessageBox.Show("Can't do like this!");//меняем местами dateRented and dateReturned
                 }
