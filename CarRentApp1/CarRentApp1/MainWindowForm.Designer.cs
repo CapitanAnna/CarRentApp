@@ -74,22 +74,23 @@ namespace CarRentApp1
             // addRentalToolStripMenuItem
             // 
             this.addRentalToolStripMenuItem.Name = "addRentalToolStripMenuItem";
-            this.addRentalToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.addRentalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addRentalToolStripMenuItem.Text = "Add Rental";
             this.addRentalToolStripMenuItem.Click += new System.EventHandler(this.addRentalToolStripMenuItem_Click);
             // 
             // editRentalToolStripMenuItem
             // 
             this.editRentalToolStripMenuItem.Name = "editRentalToolStripMenuItem";
-            this.editRentalToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.editRentalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editRentalToolStripMenuItem.Text = "Edit Rental";
             this.editRentalToolStripMenuItem.Click += new System.EventHandler(this.editRentalToolStripMenuItem_Click);
             // 
             // viewArhiveToolStripMenuItem
             // 
             this.viewArhiveToolStripMenuItem.Name = "viewArhiveToolStripMenuItem";
-            this.viewArhiveToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.viewArhiveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewArhiveToolStripMenuItem.Text = "View Arhive";
+            this.viewArhiveToolStripMenuItem.Click += new System.EventHandler(this.viewArhiveToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 

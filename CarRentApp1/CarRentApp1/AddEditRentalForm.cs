@@ -31,6 +31,7 @@ namespace CarRentApp1
             dtpDateRented.Text = _carRentalRecord.DateRented.Value.ToString();
             dtpDateReturned.Text = _carRentalRecord.DateReturned.Value.ToString();
             cbTypesOfCars.SelectedValue= _carRentalRecord.TypesOfCars.ToString();
+
         }
         public AddEditRentalForm()
         {
